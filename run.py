@@ -1,3 +1,18 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import csv
+from pprint import pprint
+
+ALBUMS = 'albumlist.csv'
+all_albums = []
+
+
+class Album:
+    def __init__(self, number, year, album, artist, genre, subgenre):
+        """
+        Represents an album
+        """
+        self.number = number
+        self.year = year
+        self.album = album
+        self.artist = artist
+        self.genre = genre
+        self.subgenre = subgenre
