@@ -1,5 +1,6 @@
 import csv
 from pprint import pprint
+from tabulate import tabulate
 
 
 class Album:
@@ -22,21 +23,26 @@ def get_albums():
     """
     with open('albumlist.csv', encoding='latin1') as album_list:
         csv_reader = csv.reader(album_list, delimiter=',')
+        # next(album_list)
         all_albums = []
         for albums in csv_reader:
             all_albums.append(albums)
         return all_albums
 
 
-def print_albums(data):
+def print_albums(album_data):
     """
-    Prints all albums to screen minus subgenre
+    Prints all albums to screen minus subgenre and genre
     https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
+    https://learnpython.com/blog/print-table-in-python/
     """
-    for i in data:
+    trimmed_albums = []
+    for i in album_data:
         album_list_trimed = i[:4]
-        print(*album_list_trimed)
+        trimmed_albums.append(album_list_trimed)
+    print(tabulate(trimmed_albums, headers='firstrow', tablefmt='fancy_grid'))
 
 
 all_albums = get_albums()
 print_albums(all_albums)
+
