@@ -43,6 +43,17 @@ def print_albums(album_data):
     print(tabulate(trimmed_albums, headers='firstrow', tablefmt='fancy_grid'))
 
 
-all_albums = get_albums()
-print_albums(all_albums)
+def menu():
+    """
+    Prints user menu to screen
+    """
+    print("Please choose a selection from the menu below:")
+    print("1 - Show all albums")
+    print("2 - Show favourites")
+    print("3 - Show owned albums")
+    print("4 - search albums")
 
+
+all_albums = get_albums()
+# print_albums(all_albums)
+menu()
