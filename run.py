@@ -22,8 +22,21 @@ def get_albums():
     """
     with open('albumlist.csv', encoding='latin1') as album_list:
         csv_reader = csv.reader(album_list, delimiter=',')
+        all_albums = []
         for albums in csv_reader:
-            return albums
+            all_albums.append(albums)
+        return all_albums
 
 
-get_albums()
+def print_albums(data):
+    """
+    Prints all albums to screen minus subgenre
+    https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
+    """
+    for i in data:
+        album_list_trimed = i[:4]
+        print(*album_list_trimed)
+
+
+all_albums = get_albums()
+print_albums(all_albums)
