@@ -2,7 +2,7 @@ import csv
 from pprint import pprint
 from tabulate import tabulate
 
-owned_albums = None
+owned_albums = []
 
 
 class Album:
@@ -64,6 +64,7 @@ def get_user_choice():
         user_choice = input('Please choose an option from the list above:\n')
         if user_choice == str(1):
             print_albums(all_albums)
+            owned_menu()
         elif user_choice == str(2):
             print_owned(owned_albums)
         elif user_choice == str(3):
@@ -76,7 +77,7 @@ def get_user_choice():
 def get_owned(album_data):
     """
     gets album from list based on user input and returns album
-    and artist in string format. 
+    and artist in string format, then appends to new list owned_albums
     https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
     """
     album_ranking = input("Please input the ranking of the album you would like to add:\n") 
@@ -84,38 +85,38 @@ def get_owned(album_data):
     owned_album = []
     owned_album.append(selected_album[2])
     owned_album.append(selected_album[3])
-    result = "Album:{} Artist:{}".format(*owned_album)
-    return result
-
-
-def add_albums_owned(owned_album):
-    """
-    adds album to list of owned albums
-    """
-    owned_albums.append(owned_album)
+    result = "Album:{} Artist:{}\n".format(*owned_album)
+    owned_albums.append(result)
     return owned_albums
 
 
 def print_owned(owned_albums):
     """
     Prints to screen users owned albums
+    https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty
     """
-    if owned_albums is None:
+    if not owned_albums:
         print("You have not added anything to this list yet!")
+        owned_menu()
     else:
         print(*owned_albums)
+        owned_menu()
 
 
 def owned_menu():
     """
-    displayes to the user if tehy would like to add album 
-    or return to main menu.
+    displayes a menue to user to add album to owned list
     """
-
+    print("1 - Add album to owned list")
+    print("2 - Return to main menu")
+    user_choice = input('Please choose an option from the list above:\n')
+    if user_choice == str(1):
+        get_owned(all_albums)
+    elif user_choice == str(2):
+        menu()
+    else:
+        print("Invalid input, please choose again!")
 
 
 all_albums = get_albums()
 menu()
-owned_album = get_owned(all_albums)
-owned_albums = add_albums_owned(owned_album)
-
