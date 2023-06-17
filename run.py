@@ -2,6 +2,8 @@ import csv
 from pprint import pprint
 from tabulate import tabulate
 
+owned_albums = None
+
 
 class Album:
     def __init__(self, number, year, album, artist, genre, subgenre):
@@ -49,8 +51,8 @@ def menu():
     """
     print("Please choose a selection from the menu below:")
     print("1 - Show all albums")
-    print("2 - Show owned albums")
-    print("3 - search albums")
+    print("2 - Show owned list")
+    print("3 - Search albums")
     get_user_choice()
 
 
@@ -63,7 +65,7 @@ def get_user_choice():
         if user_choice == str(1):
             print_albums(all_albums)
         elif user_choice == str(2):
-            print("option 2 - owned")
+            print_owned(owned_albums)
         elif user_choice == str(3):
             print("option 4 - search")
         else:
@@ -86,6 +88,34 @@ def get_owned(album_data):
     return result
 
 
+def add_albums_owned(owned_album):
+    """
+    adds album to list of owned albums
+    """
+    owned_albums.append(owned_album)
+    return owned_albums
+
+
+def print_owned(owned_albums):
+    """
+    Prints to screen users owned albums
+    """
+    if owned_albums is None:
+        print("You have not added anything to this list yet!")
+    else:
+        print(*owned_albums)
+
+
+def owned_menu():
+    """
+    displayes to the user if tehy would like to add album 
+    or return to main menu.
+    """
+
+
+
 all_albums = get_albums()
-# menu()
-add_owned(all_albums)
+menu()
+owned_album = get_owned(all_albums)
+owned_albums = add_albums_owned(owned_album)
+
