@@ -1,6 +1,7 @@
 import csv
 from pprint import pprint
 from tabulate import tabulate
+import textwrap
 
 owned_albums = []
 
@@ -41,6 +42,7 @@ def print_albums(album_data):
     trimmed_albums = []
     for i in album_data:
         album_list_trimed = i[:4]
+        textwrap.shorten(album_list_trimed[3], width=20, placeholder="...")
         trimmed_albums.append(album_list_trimed)
     print(tabulate(trimmed_albums, headers='firstrow', tablefmt='fancy_grid'))
 
