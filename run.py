@@ -49,11 +49,27 @@ def menu():
     """
     print("Please choose a selection from the menu below:")
     print("1 - Show all albums")
-    print("2 - Show favourites")
-    print("3 - Show owned albums")
-    print("4 - search albums")
+    print("2 - Show owned albums")
+    print("3 - search albums")
+    get_user_choice()
+
+
+def get_user_choice():
+    """
+    Takes user input and directes user to their chossen selection
+    """
+    while True:
+        user_choice = input('Please choose an option from the list above:\n')
+        if user_choice == str(1):
+            print_albums(all_albums)
+        elif user_choice == str(2):
+            print("option 2 - owned")
+        elif user_choice == str(3):
+            print("option 4 - search")
+        else:
+            print("Invalid input, please choose again!")
+            continue
 
 
 all_albums = get_albums()
-# print_albums(all_albums)
 menu()
