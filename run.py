@@ -71,5 +71,21 @@ def get_user_choice():
             continue
 
 
+def get_owned(album_data):
+    """
+    gets album from list based on user input and returns album
+    and artist in string format. 
+    https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
+    """
+    album_ranking = input("Please input the ranking of the album you would like to add:\n") 
+    selected_album = album_data[int(album_ranking)]
+    owned_album = []
+    owned_album.append(selected_album[2])
+    owned_album.append(selected_album[3])
+    result = "Album:{} Artist:{}".format(*owned_album)
+    return result
+
+
 all_albums = get_albums()
-menu()
+# menu()
+add_owned(all_albums)
