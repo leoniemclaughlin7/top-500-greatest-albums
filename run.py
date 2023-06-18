@@ -1,6 +1,7 @@
 import csv
 from pprint import pprint
 from tabulate import tabulate
+import search
 
 
 owned_albums = []
@@ -134,53 +135,53 @@ def search_menu():
     print("4 - search by genre")
     user_choice = input("Please choose an option from the list above:\n")
     if user_choice == str(1):
-        search_albums(all_albums, 2)
+        search.search_albums(all_albums, 2)
     elif user_choice == str(2):
-        search_year(all_albums)
+        search.search_year(all_albums)
     elif user_choice == str(3):
-        search_albums(all_albums, 3)
+        search.search_albums(all_albums, 3)
     elif user_choice == str(4):
-        search_albums(all_albums, 4)
+        search.search_albums(all_albums, 4)
     else:
         print("Invalid input, please choose again!")
 
 
-def search_albums(all_albums, album_row):
-    """
-    searches all album names by inputted word from user
-    """
-    search_word = input("Enter a search query:\n")
-    found_albums = []
-    for album in all_albums:
-        if search_word.capitalize() in album[album_row]:
-            found_albums.append(album[:4])
+# def search_albums(all_albums, album_row):
+#     """
+#     searches all album names by inputted word from user
+#     """
+#     search_word = input("Enter a search query:\n")
+#     found_albums = []
+#     for album in all_albums:
+#         if search_word.capitalize() in album[album_row]:
+#             found_albums.append(album[:4])
 
-    if found_albums:
-        max_widths = [None, None, 35, 15]
-        print(tabulate(found_albums,
-              headers=["Ranking", "Year", "Album", "Artist"],
-              tablefmt='grid', maxcolwidths=max_widths))
-    else:
-        print("No albums found, please try again!")
+#     if found_albums:
+#         max_widths = [None, None, 35, 15]
+#         print(tabulate(found_albums,
+#               headers=["Ranking", "Year", "Album", "Artist"],
+#               tablefmt='grid', maxcolwidths=max_widths))
+#     else:
+#         print("No albums found, please try again!")
 
 
-def search_year(all_albums):
-    """
-    searched albums by year
-    """
-    year = input("Enter a search query:\n")
-    found_albums = []
-    for album in all_albums:
-        if str(year) in album[1]:
-            found_albums.append(album[:4])
+# def search_year(all_albums):
+#     """
+#     searched albums by year
+#     """
+#     year = input("Enter a search query:\n")
+#     found_albums = []
+#     for album in all_albums:
+#         if str(year) in album[1]:
+#             found_albums.append(album[:4])
 
-    if found_albums:
-        max_widths = [None, None, 35, 15]
-        print(tabulate(found_albums,
-              headers=["Ranking", "Year", "Album", "Artist"],
-              tablefmt='grid', maxcolwidths=max_widths))
-    else:
-        print("No albums found, please try again!")
+#     if found_albums:
+#         max_widths = [None, None, 35, 15]
+#         print(tabulate(found_albums,
+#               headers=["Ranking", "Year", "Album", "Artist"],
+#               tablefmt='grid', maxcolwidths=max_widths))
+#     else:
+#         print("No albums found, please try again!")
 
 
 all_albums = get_albums()
