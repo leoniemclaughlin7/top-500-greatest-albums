@@ -46,7 +46,7 @@ def print_albums(album_data):
         trimmed_albums.append(album_list_trimed)
     max_widths = [None, None, 35, 15]
     print(tabulate(trimmed_albums, headers='firstrow',
-          tablefmt='fancy_grid', maxcolwidths=max_widths))
+          tablefmt='plain', maxcolwidths=max_widths))
 
 
 def menu():
@@ -72,7 +72,7 @@ def get_user_choice():
         elif user_choice == str(2):
             print_owned(owned_albums)
         elif user_choice == str(3):
-            print("option 4 - search")
+            search_menu()
         else:
             print("Invalid input, please choose again!")
             continue
