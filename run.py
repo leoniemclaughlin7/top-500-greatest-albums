@@ -38,13 +38,15 @@ def print_albums(album_data):
     Prints all albums to screen minus subgenre and genre
     https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
     https://learnpython.com/blog/print-table-in-python/
+    https://pypi.org/project/tabulate/ 
     """
     trimmed_albums = []
     for i in album_data:
         album_list_trimed = i[:4]
         trimmed_albums.append(album_list_trimed)
-    max_widths = [None, None, 25, 15]
-    print(tabulate(trimmed_albums, headers='firstrow', tablefmt='fancy_grid', maxcolwidths=max_widths))
+    max_widths = [None, None, 35, 15]
+    print(tabulate(trimmed_albums, headers='firstrow',
+          tablefmt='fancy_grid', maxcolwidths=max_widths))
 
 
 def menu():
@@ -82,13 +84,15 @@ def get_owned(album_data):
     and artist in string format, then appends to new list owned_albums
     https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
     """
-    album_ranking = input("Please input the ranking of the album you would like to add:\n") 
+    album_ranking = input("Please input the ranking of the album you would \
+                           like to add:\n")
     selected_album = album_data[int(album_ranking)]
     owned_album = []
     owned_album.append(selected_album[2])
     owned_album.append(selected_album[3])
     result = "Album:{} Artist:{}\n".format(*owned_album)
     owned_albums.append(result)
+    menu()
     return owned_albums
 
 
@@ -107,7 +111,7 @@ def print_owned(owned_albums):
 
 def owned_menu():
     """
-    displayes a menue to user to add album to owned list
+    displayes a menu to user to add album to owned list
     """
     print("1 - Add album to owned list")
     print("2 - Return to main menu")
@@ -116,6 +120,27 @@ def owned_menu():
         get_owned(all_albums)
     elif user_choice == str(2):
         menu()
+    else:
+        print("Invalid input, please choose again!")
+
+
+def search_menu():
+    """
+    Gives the user options to search the dataset
+    """
+    print("1 - search by word")
+    print("2 - search by year")
+    print("3 - search by genre")
+    print("4 - search by subgenre")
+    user_choice = input("Please choose an option from the list above:\n")
+    if user_choice == str(1):
+        print("search by word")
+    elif user_choice == str(2):
+        print("search by year")
+    elif user_choice == str(3):
+        print("search by genre")
+    elif user_choice == str(4):
+        print("search by subgenre")
     else:
         print("Invalid input, please choose again!")
 
