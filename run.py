@@ -1,7 +1,7 @@
 import csv
 from pprint import pprint
 from tabulate import tabulate
-import search
+from search import search_albums, search_year
 from owned import owned_album, print_owned, get_owned
 
 
@@ -115,13 +115,13 @@ def search_menu():
     print("4 - search by genre")
     user_choice = input("Please choose an option from the list above:\n")
     if user_choice == str(1):
-        search.search_albums(all_albums, 2)
+        search_albums(all_albums, 2)
     elif user_choice == str(2):
-        search.search_year(all_albums)
+        search_year(all_albums)
     elif user_choice == str(3):
-        search.search_albums(all_albums, 3)
+        search_albums(all_albums, 3)
     elif user_choice == str(4):
-        search.search_albums(all_albums, 4)
+        search_albums(all_albums, 4)
     else:
         print("Invalid input, please choose again!")
 
