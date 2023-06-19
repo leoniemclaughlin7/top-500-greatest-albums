@@ -1,21 +1,8 @@
 import csv
 from pprint import pprint
 from tabulate import tabulate
-from search import search_albums, search_year
+import search
 from owned import owned_album, print_owned, get_owned
-
-
-class Album:
-    def __init__(self, number, year, album, artist, genre, subgenre):
-        """
-        Represents an album
-        """
-        self.number = number
-        self.year = year
-        self.album = album
-        self.artist = artist
-        self.genre = genre
-        self.subgenre = subgenre
 
 
 def get_albums():
@@ -83,11 +70,12 @@ def get_user_choice():
             owned_menu()  
         elif user_choice == str(3):
             print_owned(owned_album)
+            owned_menu()
         elif user_choice == str(4):
             search_menu()
         else:
             print("Invalid input, please choose again!")
-            continue
+            menu()
 
 
 def owned_menu():
@@ -99,10 +87,12 @@ def owned_menu():
     user_choice = input('Please choose an option from the list above:\n')
     if user_choice == str(1):
         get_owned(trimmed_album_data)
+        menu()
     elif user_choice == str(2):
         menu()
     else:
         print("Invalid input, please choose again!")
+        owned_menu()
 
 
 def search_menu():
@@ -115,15 +105,20 @@ def search_menu():
     print("4 - search by genre")
     user_choice = input("Please choose an option from the list above:\n")
     if user_choice == str(1):
-        search_albums(all_albums, 2)
+        search.search_albums(all_albums, 2)
+        owned_menu()
     elif user_choice == str(2):
-        search_year(all_albums)
+        search.search_year(all_albums)
+        owned_menu()
     elif user_choice == str(3):
-        search_albums(all_albums, 3)
+        search.search_albums(all_albums, 3)
+        owned_menu()
     elif user_choice == str(4):
-        search_albums(all_albums, 4)
+        search.search_albums(all_albums, 4)
+        owned_menu()
     else:
         print("Invalid input, please choose again!")
+        search_menu()
 
 
 def print_top_100(trimmed_album_data):

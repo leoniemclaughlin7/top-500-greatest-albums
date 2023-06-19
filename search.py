@@ -1,5 +1,4 @@
 from tabulate import tabulate
-import run
 
 
 def search_albums(all_albums, album_row):
@@ -17,7 +16,6 @@ def search_albums(all_albums, album_row):
         print(tabulate(found_albums,
               headers=["Ranking", "Year", "Album", "Artist"],
               tablefmt='grid', maxcolwidths=max_widths))
-        run.owned_menu()
     else:
         print("No albums found, please try again!")
 
@@ -37,6 +35,5 @@ def search_year(all_albums):
         print(tabulate(found_albums,
               headers=["Ranking", "Year", "Album", "Artist"],
               tablefmt='grid', maxcolwidths=max_widths))
-        run.owned_menu()
     else:
         print("No albums found, please try again!")
