@@ -34,19 +34,27 @@ def get_albums():
         return all_albums
 
 
-def print_albums(album_data):
+def trimmed_albums(album_data):
+    """
+    Trims album list so as only ranking, year, 
+    artist and album show in tables when displayed.
+    """
+    trimmed_albums = []
+    for i in album_data:
+        album_list_trimed = i[:4]
+        trimmed_albums.append(album_list_trimed)
+    return trimmed_albums
+
+
+def print_albums(trimmed_album_data):
     """
     Prints all albums to screen minus subgenre and genre
     https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
     https://learnpython.com/blog/print-table-in-python/
     https://pypi.org/project/tabulate/
     """
-    trimmed_albums = []
-    for i in album_data:
-        album_list_trimed = i[:4]
-        trimmed_albums.append(album_list_trimed)
     max_widths = [None, None, 35, 15]
-    print(tabulate(trimmed_albums,
+    print(tabulate(trimmed_album_data,
           headers=["Ranking", "Year", "Album", "Artist"],
           tablefmt='grid', maxcolwidths=max_widths))
 
@@ -70,10 +78,10 @@ def get_user_choice():
     while True:
         user_choice = input('Please choose an option from the list above:\n')
         if user_choice == str(1):
-            print_albums(all_albums)
+            print_albums(trimmed_album_data)
             owned_menu()
         elif user_choice == str(2):
-            print_top_100(all_albums)  
+            print_top_100(trimmed_album_data)  
         elif user_choice == str(3):
             print_owned(owned_albums)
         elif user_choice == str(4):
@@ -150,16 +158,12 @@ def search_menu():
         print("Invalid input, please choose again!")
 
 
-def print_top_100(album_data):
+def print_top_100(trimmed_album_data):
     """
     prints top 100 albums by ranking to terminal
     """
-    trimmed_albums = []
-    for i in album_data:
-        album_list_trimed = i[:4]
-        trimmed_albums.append(album_list_trimed)
     max_widths = [None, None, 35, 15]
-    limited_data = trimmed_albums[:100]
+    limited_data = trimmed_album_data[:100]
     print(tabulate(limited_data,
           headers=["Ranking", "Year", "Album", "Artist"],
           tablefmt='grid', maxcolwidths=max_widths))
@@ -167,4 +171,5 @@ def print_top_100(album_data):
 
 
 all_albums = get_albums()
+trimmed_album_data = trimmed_albums(all_albums)
 menu()
