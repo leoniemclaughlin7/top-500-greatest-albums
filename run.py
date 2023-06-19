@@ -2,9 +2,7 @@ import csv
 from pprint import pprint
 from tabulate import tabulate
 import search
-
-
-owned_albums = []
+from owned import owned_album, print_owned, get_owned
 
 
 class Album:
@@ -81,45 +79,15 @@ def get_user_choice():
             print_albums(trimmed_album_data)
             owned_menu()
         elif user_choice == str(2):
-            print_top_100(trimmed_album_data)  
+            print_top_100(trimmed_album_data)
+            owned_menu()  
         elif user_choice == str(3):
-            print_owned(owned_albums)
+            print_owned(owned_album)
         elif user_choice == str(4):
             search_menu()
         else:
             print("Invalid input, please choose again!")
             continue
-
-
-def get_owned(album_data):
-    """
-    gets album from list based on user input and returns album
-    and artist in string format, then appends to new list owned_albums
-    https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
-    """
-    album_ranking = input("Please input the ranking of the album you would \
-                           like to add:\n")
-    selected_album = album_data[int(album_ranking)]
-    owned_album = []
-    owned_album.append(selected_album[2])
-    owned_album.append(selected_album[3])
-    result = "Album:{} Artist:{}\n".format(*owned_album)
-    owned_albums.append(result)
-    menu()
-    return owned_albums
-
-
-def print_owned(owned_albums):
-    """
-    Prints to screen users owned albums
-    https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty
-    """
-    if not owned_albums:
-        print("You have not added anything to this list yet!")
-        owned_menu()
-    else:
-        print(*owned_albums)
-        owned_menu()
 
 
 def owned_menu():
@@ -130,7 +98,7 @@ def owned_menu():
     print("2 - Return to main menu")
     user_choice = input('Please choose an option from the list above:\n')
     if user_choice == str(1):
-        get_owned(all_albums)
+        get_owned(trimmed_album_data)
     elif user_choice == str(2):
         menu()
     else:
@@ -167,7 +135,6 @@ def print_top_100(trimmed_album_data):
     print(tabulate(limited_data,
           headers=["Ranking", "Year", "Album", "Artist"],
           tablefmt='grid', maxcolwidths=max_widths))
-
 
 
 all_albums = get_albums()
