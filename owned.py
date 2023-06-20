@@ -9,10 +9,18 @@ def get_owned(trimmed_album_data):
     and artist in string format, then appends to new list owned_albums
     https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
     """
-    album_ranking = input("Please input the ranking of the album you would "
-                          "like to add:\n")
-    selected_album = trimmed_album_data[int(album_ranking)-1]
-    owned_album.append(selected_album)
+    try:
+        album_ranking = int(input("Please input the ranking of the album you would "
+                          "like to add:\n"))
+        if album_ranking < 1 or album_ranking > 500:
+            raise ValueError
+        selected_album = trimmed_album_data[album_ranking -1]
+        if selected_album not in owned_album:
+            owned_album.append(selected_album)
+        else:
+            print("Album already in list!")
+    except ValueError:
+        print("Invalid input: Please enter a number between 1 and 500")
 
 
 def print_owned(owned_album):
@@ -36,11 +44,14 @@ def remove_owned():
     https://stackoverflow.com/questions/9553638/find-the-index-of-an-item-in-a-list-of-lists
     https://www.w3schools.com/python/ref_func_reversed.asp
     """
-    if not owned_album:
-        print("You have not added anything to this list yet!")  
-    else:
-        album_ranking = input("Please input the ranking of the album you would "
+    try:
+        if not owned_album:
+            print("You have not added anything to this list yet!")  
+        else:
+            album_ranking = input("Please input the ranking of the album you would "
                           "like to remove:\n")
+        if int(album_ranking) < 1 or int(album_ranking) > 500:
+            raise ValueError
         removed_albums = []
         for i, album in enumerate(owned_album):
             if album_ranking in album:
@@ -49,5 +60,5 @@ def remove_owned():
                 print("Album not in owned list!")
         for index in reversed(removed_albums):
             owned_album.pop(index)
-            
-
+    except ValueError:
+        print("Invalid input: Please enter a number between 1 and 500") 
