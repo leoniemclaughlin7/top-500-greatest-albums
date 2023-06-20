@@ -9,18 +9,20 @@ def get_owned(trimmed_album_data):
     and artist in string format, then appends to new list owned_albums
     https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
     """
-    try:
-        album_ranking = int(input("Please input the ranking of the album you would "
+    while True:
+        try:
+            album_ranking = int(input("Please input the ranking of the album you would "
                           "like to add:\n"))
-        if album_ranking < 1 or album_ranking > 500:
-            raise ValueError
-        selected_album = trimmed_album_data[album_ranking -1]
-        if selected_album not in owned_album:
-            owned_album.append(selected_album)
-        else:
-            print("Album already in list!")
-    except ValueError:
-        print("Invalid input: Please enter a number between 1 and 500")
+            if album_ranking < 1 or album_ranking > 500:
+                raise ValueError
+            selected_album = trimmed_album_data[album_ranking -1]
+            if selected_album not in owned_album:
+                owned_album.append(selected_album)
+                break
+            else:
+                print("Album already in list!")
+        except ValueError:
+            print("Invalid input: Please enter a number between 1 and 500")
 
 
 def print_owned(owned_album):

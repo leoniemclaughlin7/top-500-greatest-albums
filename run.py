@@ -1,5 +1,4 @@
 import csv
-from pprint import pprint
 from tabulate import tabulate
 import search
 from owned import owned_album, print_owned, get_owned, remove_owned
@@ -60,21 +59,26 @@ def get_user_choice():
     """
     Takes user input and directes user to their chossen selection
     """
-    while True:
-        user_choice = input('Please choose an option from the list above:\n')
-        if user_choice == str(1):
+    try:
+        user_choice = int(input('Please choose an option from the list above:\n'))
+        if user_choice < 1 or user_choice > 4:
+            raise ValueError
+        if user_choice == 1:
             print_albums(trimmed_album_data)
             owned_menu()
-        elif user_choice == str(2):
+        elif user_choice == 2:
             print_top_100(trimmed_album_data)
             owned_menu()  
-        elif user_choice == str(3):
+        elif user_choice == 3:
             print_owned(owned_album)
             owned_menu()
-        elif user_choice == str(4):
+        elif user_choice == 4:
             search_menu()
         else:
             print("Invalid input, please choose again!")
+            menu()
+    except ValueError:
+            print("Invalid input: Please choose a number between 1 and 4")
             menu()
         
 
@@ -86,20 +90,26 @@ def owned_menu():
     print("1 - Add album to owned list")
     print("2 - Remove album from owned list")
     print("3 - Return to main menu")
-    user_choice = input('Please choose an option from the list above:\n')
-    if user_choice == str(1):
-        get_owned(trimmed_album_data)
-        print_owned(owned_album)
-        owned_menu()
-    elif user_choice == str(2):
-        remove_owned()
-        print_owned(owned_album)
-        owned_menu()
-    elif user_choice == str(3):
-        menu()
-    else:
-        print("Invalid input, please choose again!")
-        owned_menu()
+    try:
+        user_choice = int(input('Please choose an option from the list above:\n'))
+        if user_choice < 1 or user_choice > 3:
+            raise ValueError
+        if user_choice == 1:
+            get_owned(trimmed_album_data)
+            print_owned(owned_album)
+            owned_menu()
+        elif user_choice == 2:
+            remove_owned()
+            print_owned(owned_album)
+            owned_menu()
+        elif user_choice == 3:
+            menu()
+        else:
+            print("Invalid input, please choose again!")
+            owned_menu()
+    except ValueError:
+            print("Invalid input: Please choose a number between 1 and 3")
+            owned_menu()
 
 
 def search_menu():
