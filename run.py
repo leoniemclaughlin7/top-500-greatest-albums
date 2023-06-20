@@ -2,7 +2,7 @@ import csv
 from pprint import pprint
 from tabulate import tabulate
 import search
-from owned import owned_album, print_owned, get_owned
+from owned import owned_album, print_owned, get_owned, remove_owned
 
 
 def get_albums():
@@ -83,12 +83,18 @@ def owned_menu():
     displayes a menu to user to add album to owned list
     """
     print("1 - Add album to owned list")
-    print("2 - Return to main menu")
+    print("2 - Remove album from owned list")
+    print("3 - Return to main menu")
     user_choice = input('Please choose an option from the list above:\n')
     if user_choice == str(1):
         get_owned(trimmed_album_data)
-        menu()
+        print_owned(owned_album)
+        owned_menu()
     elif user_choice == str(2):
+        remove_owned()
+        print_owned(owned_album)
+        owned_menu()
+    elif user_choice == str(3):
         menu()
     else:
         print("Invalid input, please choose again!")

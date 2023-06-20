@@ -27,4 +27,29 @@ def print_owned(owned_album):
         print(tabulate(owned_album,
               headers=["Ranking", "Year", "Album", "Artist"],
               tablefmt='grid', maxcolwidths=max_widths))
+
+
+def remove_owned():
+    """
+    Removes album for list of owned albums
+    https://datagy.io/python-list-pop-remove-del-clear/
+    https://stackoverflow.com/questions/9553638/find-the-index-of-an-item-in-a-list-of-lists
+    https://www.w3schools.com/python/ref_func_reversed.asp
+    """
+    if not owned_album:
+        print("You have not added anything to this list yet!")  
+    else:
+        album_ranking = input("Please input the ranking of the album you would "
+                          "like to remove:\n")
+        removed_albums = []
+        for i, album in enumerate(owned_album):
+            if album_ranking in album:
+                removed_albums.append(i)
+
+        for index in reversed(removed_albums):
+            owned_album.pop(index)
         
+                
+            
+            
+
