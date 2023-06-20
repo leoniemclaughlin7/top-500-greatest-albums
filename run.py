@@ -120,22 +120,28 @@ def search_menu():
     print("2 - search by year")
     print("3 - search by artist")
     print("4 - search by genre")
-    user_choice = input("Please choose an option from the list above:\n")
-    if user_choice == str(1):
-        search.search_albums(all_albums, 2)
-        owned_menu()
-    elif user_choice == str(2):
-        search.search_year(all_albums)
-        owned_menu()
-    elif user_choice == str(3):
-        search.search_albums(all_albums, 3)
-        owned_menu()
-    elif user_choice == str(4):
-        search.search_albums(all_albums, 4)
-        owned_menu()
-    else:
-        print("Invalid input, please choose again!")
-        search_menu()
+    try:
+        user_choice = int(input("Please choose an option from the list above:\n"))
+        if user_choice < 1 or user_choice > 4:
+            raise ValueError
+        if user_choice == 1:
+            search.search_albums(all_albums, 2)
+            owned_menu()
+        elif user_choice == 2:
+            search.search_year(all_albums)
+            owned_menu()
+        elif user_choice == 3:
+            search.search_albums(all_albums, 3)
+            owned_menu()
+        elif user_choice == 4:
+            search.search_albums(all_albums, 4)
+            owned_menu()
+        else:
+            print("Invalid input, please choose again!")
+            search_menu()
+    except ValueError:
+            print("Invalid input: Please choose a number between 1 and 4")
+            search_menu()   
 
 
 def print_top_100(trimmed_album_data):

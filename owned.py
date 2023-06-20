@@ -21,6 +21,7 @@ def get_owned(trimmed_album_data):
                 break
             else:
                 print("Album already in list!")
+                break
         except ValueError:
             print("Invalid input: Please enter a number between 1 and 500")
 
