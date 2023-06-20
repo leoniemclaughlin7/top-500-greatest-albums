@@ -2,6 +2,7 @@ import csv
 from tabulate import tabulate
 import search
 from owned import owned_album, print_owned, get_owned, remove_owned
+from termcolor import colored, cprint
 
 
 def get_albums():
@@ -47,11 +48,11 @@ def menu():
     """
     Prints user menu to screen
     """
-    print("Please choose a selection from the menu below:")
-    print("1 - Show all albums")
-    print("2 - Show top 100 albums")
-    print("3 - Show owned list")
-    print("4 - Search albums")
+    cprint("Please choose a selection from the menu below:" , "light_magenta")
+    cprint("1 - Show all albums" , "light_yellow")
+    cprint("2 - Show top 100 albums" , "light_yellow")
+    cprint("3 - Show owned list" , "light_yellow")
+    cprint("4 - Search albums" , "light_yellow")
     get_user_choice()
 
 
@@ -60,7 +61,7 @@ def get_user_choice():
     Takes user input and directes user to their chossen selection
     """
     try:
-        user_choice = int(input('Please choose an option from the list above:\n'))
+        user_choice = int(input(colored('Please choose an option from the list above:\n' ,  "light_magenta")))
         if user_choice < 1 or user_choice > 4:
             raise ValueError
         if user_choice == 1:
@@ -78,20 +79,19 @@ def get_user_choice():
             print("Invalid input, please choose again!")
             menu()
     except ValueError:
-            print("Invalid input: Please choose a number between 1 and 4")
-            menu()
-        
+            cprint("Invalid input: Please choose a number between 1 and 4" , "red")
+            menu()       
 
 
 def owned_menu():
     """
     displayes a menu to user to add album to owned list
     """
-    print("1 - Add album to owned list")
-    print("2 - Remove album from owned list")
-    print("3 - Return to main menu")
+    cprint("1 - Add album to owned list", "light_yellow")
+    cprint("2 - Remove album from owned list", "light_yellow")
+    cprint("3 - Return to main menu", "light_yellow")
     try:
-        user_choice = int(input('Please choose an option from the list above:\n'))
+        user_choice = int(input(colored('Please choose an option from the list above:\n', "light_magenta")))
         if user_choice < 1 or user_choice > 3:
             raise ValueError
         if user_choice == 1:
@@ -108,7 +108,7 @@ def owned_menu():
             print("Invalid input, please choose again!")
             owned_menu()
     except ValueError:
-            print("Invalid input: Please choose a number between 1 and 3")
+            cprint("Invalid input: Please choose a number between 1 and 3" , "red")
             owned_menu()
 
 
@@ -116,12 +116,12 @@ def search_menu():
     """
     Gives the user options to search the dataset
     """
-    print("1 - search by album title")
-    print("2 - search by year")
-    print("3 - search by artist")
-    print("4 - search by genre")
+    cprint("1 - search by album title", "light_yellow")
+    cprint("2 - search by year", "light_yellow")
+    cprint("3 - search by artist", "light_yellow")
+    cprint("4 - search by genre", "light_yellow")
     try:
-        user_choice = int(input("Please choose an option from the list above:\n"))
+        user_choice = int(input(colored("Please choose an option from the list above:\n", "light_magenta")))
         if user_choice < 1 or user_choice > 4:
             raise ValueError
         if user_choice == 1:
@@ -140,7 +140,7 @@ def search_menu():
             print("Invalid input, please choose again!")
             search_menu()
     except ValueError:
-            print("Invalid input: Please choose a number between 1 and 4")
+            cprint("Invalid input: Please choose a number between 1 and 4" , "red")
             search_menu()   
 
 

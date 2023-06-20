@@ -1,4 +1,5 @@
 from tabulate import tabulate
+from termcolor import colored, cprint
 
 
 def search_albums(all_albums, album_row):
@@ -7,7 +8,7 @@ def search_albums(all_albums, album_row):
     """
     while True:
         try:
-            search_word = input("Enter a search query:\n")
+            search_word = input(colored("Enter a search query:\n", "light_magenta"))
             if search_word == "":
                 raise ValueError("Input cannot be empty!")
             found_albums = []
@@ -21,9 +22,9 @@ def search_albums(all_albums, album_row):
                       tablefmt='grid', maxcolwidths=max_widths))
                 break
             else:
-                print("No albums found, please try again!")
+                cprint("No albums found, please try again!", "red")
         except ValueError as e:
-            print("Invalid input:", str(e))
+            cprint("Invalid input:", str(e), "red")
 
 
 def search_year(all_albums):
@@ -32,7 +33,7 @@ def search_year(all_albums):
     """
     while True:
         try:
-            year = int(input("Please input a year from 1955 to 2011:\n"))
+            year = int(input(colored("Please input a year from 1955 to 2011:\n", "light_magenta")))
             if year < 1955 or year > 2011:
                 raise ValueError
             found_albums = []
@@ -46,6 +47,6 @@ def search_year(all_albums):
                       tablefmt='grid', maxcolwidths=max_widths))
                 break
             else:
-                print("No albums found, please try again!")
+                cprint("No albums found, please try again!", "red")
         except ValueError:
-            print("Invalid input: Please try again!")
+            cprint("Invalid input: Please try again!", "red")
