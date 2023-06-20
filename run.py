@@ -76,6 +76,7 @@ def get_user_choice():
         else:
             print("Invalid input, please choose again!")
             menu()
+        
 
 
 def owned_menu():

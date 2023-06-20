@@ -45,11 +45,9 @@ def remove_owned():
         for i, album in enumerate(owned_album):
             if album_ranking in album:
                 removed_albums.append(i)
-
+            else:
+                print("Album not in owned list!")
         for index in reversed(removed_albums):
             owned_album.pop(index)
-        
-                
-            
             
 
