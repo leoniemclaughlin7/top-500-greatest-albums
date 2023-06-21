@@ -38,7 +38,7 @@ def print_albums(trimmed_album_data):
     https://learnpython.com/blog/print-table-in-python/
     https://pypi.org/project/tabulate/
     """
-    max_widths = [None, None, 35, 15]
+    max_widths = [None, None, 35, 25]
     print(tabulate(trimmed_album_data,
           headers=["Ranking", "Year", "Album", "Artist"],
           tablefmt='grid', maxcolwidths=max_widths))
@@ -148,7 +148,7 @@ def print_top_100(trimmed_album_data):
     """
     prints top 100 albums by ranking to terminal
     """
-    max_widths = [None, None, 35, 15]
+    max_widths = [None, None, 35, 25]
     limited_data = trimmed_album_data[:100]
     print(tabulate(limited_data,
           headers=["Ranking", "Year", "Album", "Artist"],
