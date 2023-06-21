@@ -155,6 +155,23 @@ def print_top_100(trimmed_album_data):
           tablefmt='grid', maxcolwidths=max_widths))
 
 
+def opening_title():
+    """
+    Prints opening ascii art
+    """
+    cprint("""
+ _______  _______  _______      _______  ___      _______  __   __  __   __  _______ 
+|       ||       ||       |    |   _   ||   |    |  _    ||  | |  ||  |_|  ||       |
+|_     _||   _   ||    _  |    |  |_|  ||   |    | |_|   ||  | |  ||       ||  _____|
+  |   |  |  | |  ||   |_| |    |       ||   |    |       ||  |_|  ||       || |_____ 
+  |   |  |  |_|  ||    ___|    |       ||   |___ |  _   | |       ||       ||_____  |
+  |   |  |       ||   |        |   _   ||       || |_|   ||       || ||_|| | _____| |
+  |___|  |_______||___|        |__| |__||_______||_______||_______||_|   |_||_______|
+
+    """, "light_magenta")
+
+
 all_albums = get_albums()
 trimmed_album_data = trimmed_albums(all_albums)
+opening_title()
 menu()
