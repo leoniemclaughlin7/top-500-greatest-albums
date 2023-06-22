@@ -10,7 +10,7 @@ def search_albums(all_albums, album_row):
         try:
             search_word = input(colored("Enter a search query:\n", "light_magenta"))
             if search_word == "":
-                raise ValueError("Input cannot be empty!")
+                raise ValueError
             found_albums = []
             for album in all_albums:
                 if search_word.capitalize() in album[album_row]:
@@ -23,8 +23,8 @@ def search_albums(all_albums, album_row):
                 break
             else:
                 cprint("No albums found, please try again!", "red")
-        except ValueError as e:
-            cprint("Invalid input:", str(e), "red")
+        except ValueError:
+            cprint("Invalid input: Input cannot be empty", "red")
 
 
 def search_year(all_albums):

@@ -46,7 +46,6 @@ def remove_owned():
     Removes album for list of owned albums
     https://datagy.io/python-list-pop-remove-del-clear/
     """
-    
     try:
         if not owned_album:
             cprint("You have not added anything to this list yet!" , "red")  
