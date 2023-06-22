@@ -52,9 +52,9 @@ def remove_owned():
         if not owned_album:
             cprint("You have not added anything to this list yet!" , "red")  
         else:
-            album_ranking = input(colored("Please input the ranking of the album you would "
-                          "like to remove:\n", "light_magenta"))
-        if int(album_ranking) < 1 or int(album_ranking) > 500:
+            album_ranking = int(input(colored("Please input the ranking of the album you would "
+                          "like to remove:\n", "light_magenta")))
+        if album_ranking < 1 or album_ranking > 500:
             raise ValueError
         removed_albums = []
         for i, album in enumerate(owned_album):
