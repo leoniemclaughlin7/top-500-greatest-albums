@@ -45,10 +45,11 @@ def remove_owned():
     """
     Removes album for list of owned albums
     https://datagy.io/python-list-pop-remove-del-clear/
+    https://www.w3schools.com/python/ref_keyword_pass.asp
     """
     try:
         if not owned_album:
-            cprint("You have not added anything to this list yet!" , "red")  
+            pass 
         else:
             album_ranking = input(colored("Please input the ranking of the album you would "
                           "like to remove:\n", "light_magenta"))
