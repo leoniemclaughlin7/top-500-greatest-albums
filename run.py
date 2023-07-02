@@ -1,6 +1,7 @@
 import csv
 from tabulate import tabulate
 import search
+import sys
 from owned import owned_album, print_owned, get_owned, remove_owned
 from termcolor import colored, cprint
 
@@ -41,7 +42,7 @@ def print_albums(trimmed_album_data):
     max_widths = [None, None, 35, 25]
     print(tabulate(trimmed_album_data,
           headers=["Ranking", "Year", "Album", "Artist"],
-          tablefmt='grid', maxcolwidths=max_widths))
+          tablefmt='plain', maxcolwidths=max_widths))
 
 
 def menu():
@@ -90,9 +91,10 @@ def owned_menu():
     cprint("1 - Add album to owned list", "light_yellow")
     cprint("2 - Remove album from owned list", "light_yellow")
     cprint("3 - Return to main menu", "light_yellow")
+    cprint("4 - Exit", "light_yellow")
     try:
         user_choice = int(input(colored('Please choose an option from the list above:\n', "light_magenta")))
-        if user_choice < 1 or user_choice > 3:
+        if user_choice < 1 or user_choice > 4:
             raise ValueError
         if user_choice == 1:
             get_owned(trimmed_album_data)
@@ -104,6 +106,8 @@ def owned_menu():
             owned_menu()
         elif user_choice == 3:
             menu()
+        elif user_choice == 4:
+            sys.exit()
         else:
             print("Invalid input, please choose again!")
             owned_menu()
