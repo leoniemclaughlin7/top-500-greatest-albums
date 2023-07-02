@@ -1,7 +1,6 @@
 import csv
 from tabulate import tabulate
 import search
-import sys
 from owned import owned_album, print_owned, get_owned, remove_owned
 from termcolor import colored, cprint
 
@@ -86,7 +85,8 @@ def get_user_choice():
 
 def owned_menu():
     """
-    displayes a menu to user to add album to owned list
+    displays a menu to user to add album to owned list
+    https://stackoverflow.com/questions/73663/how-do-i-terminate-a-script
     """
     cprint("1 - Add album to owned list", "light_yellow")
     cprint("2 - Remove album from owned list", "light_yellow")
@@ -107,7 +107,7 @@ def owned_menu():
         elif user_choice == 3:
             menu()
         elif user_choice == 4:
-            sys.exit()
+            exit()
         else:
             print("Invalid input, please choose again!")
             owned_menu()
@@ -152,25 +152,32 @@ def print_top_100(trimmed_album_data):
     """
     prints top 100 albums by ranking to terminal
     """
-    max_widths = [None, None, 35, 25]
+    max_widths = [None, None, 35, 20]
     limited_data = trimmed_album_data[:100]
     print(tabulate(limited_data,
           headers=["Ranking", "Year", "Album", "Artist"],
           tablefmt='grid', maxcolwidths=max_widths))
 
+def exit():
+    """
+    prints opening title and menu
+    """
+    opening_title()
+    menu()
 
 def opening_title():
     """
     Prints opening ascii art
+    https://texteditor.com/ascii-art/
     """
     cprint("""
- _______  _______  _______      _______  ___      _______  __   __  __   __  _______ 
-|       ||       ||       |    |   _   ||   |    |  _    ||  | |  ||  |_|  ||       |
-|_     _||   _   ||    _  |    |  |_|  ||   |    | |_|   ||  | |  ||       ||  _____|
-  |   |  |  | |  ||   |_| |    |       ||   |    |       ||  |_|  ||       || |_____ 
-  |   |  |  |_|  ||    ___|    |       ||   |___ |  _   | |       ||       ||_____  |
-  |   |  |       ||   |        |   _   ||       || |_|   ||       || ||_|| | _____| |
-  |___|  |_______||___|        |__| |__||_______||_______||_______||_|   |_||_______|
+ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄▄     ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄ 
+█       █       █       █  █       █   █   █  ▄    █  █ █  █  █▄█  █       █
+█▄     ▄█   ▄   █    ▄  █  █   ▄   █   █   █ █▄█   █  █ █  █       █  ▄▄▄▄▄█
+  █   █ █  █ █  █   █▄█ █  █  █▄█  █   █   █       █  █▄█  █       █ █▄▄▄▄▄ 
+  █   █ █  █▄█  █    ▄▄▄█  █       █   █▄▄▄█  ▄   ██       █       █▄▄▄▄▄  █
+  █   █ █       █   █      █   ▄   █       █ █▄█   █       █ ██▄██ █▄▄▄▄▄█ █
+  █▄▄▄█ █▄▄▄▄▄▄▄█▄▄▄█      █▄▄█ █▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄█   █▄█▄▄▄▄▄▄▄█
 
     """, "light_magenta")
 
