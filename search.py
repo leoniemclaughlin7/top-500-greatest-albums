@@ -16,7 +16,7 @@ def search_albums(all_albums, album_row):
                 if search_word.capitalize() in album[album_row]:
                     found_albums.append(album[:4])
             if found_albums:
-                max_widths = [None, None, 35, 25]
+                max_widths = [None, None, 35, 17]
                 print(tabulate(found_albums,
                       headers=["Ranking", "Year", "Album", "Artist"],
                       tablefmt='grid', maxcolwidths=max_widths))
@@ -41,7 +41,7 @@ def search_year(all_albums):
                 if str(year) in album[1]:
                     found_albums.append(album[:4])
             if found_albums:
-                max_widths = [None, None, 35, 20]
+                max_widths = [None, None, 35, 17]
                 print(tabulate(found_albums,
                       headers=["Ranking", "Year", "Album", "Artist"],
                       tablefmt='grid', maxcolwidths=max_widths))

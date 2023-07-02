@@ -152,7 +152,7 @@ def print_top_100(trimmed_album_data):
     """
     prints top 100 albums by ranking to terminal
     """
-    max_widths = [None, None, 35, 20]
+    max_widths = [None, None, 35, 17]
     limited_data = trimmed_album_data[:100]
     print(tabulate(limited_data,
           headers=["Ranking", "Year", "Album", "Artist"],

@@ -35,7 +35,7 @@ def print_owned(owned_album):
     if not owned_album:
         cprint("You have not added anything to this list yet!" , "red")  
     else:
-        max_widths = [None, None, 35, 20]
+        max_widths = [None, None, 35, 17]
         print(tabulate(owned_album,
               headers=["Ranking", "Year", "Album", "Artist"],
               tablefmt='grid', maxcolwidths=max_widths))
