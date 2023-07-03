@@ -21,7 +21,7 @@ def get_albums():
 
 def trimmed_albums(album_data):
     """
-    Trims album list so as only ranking, year, 
+    Trims album list so as only ranking, year,
     artist and album show in tables when displayed.
     """
     trimmed_albums = []
@@ -48,11 +48,11 @@ def menu():
     """
     Prints user menu to screen
     """
-    cprint("Please choose a selection from the menu below:" , "light_magenta")
-    cprint("1 - Show all albums" , "light_yellow")
-    cprint("2 - Show top 100 albums" , "light_yellow")
-    cprint("3 - Show owned list" , "light_yellow")
-    cprint("4 - Search albums" , "light_yellow")
+    cprint("Please choose a selection from the menu below:", "light_magenta")
+    cprint("1 - Show all albums", "light_yellow")
+    cprint("2 - Show top 100 albums", "light_yellow")
+    cprint("3 - Show owned list", "light_yellow")
+    cprint("4 - Search albums", "light_yellow")
     get_user_choice()
 
 
@@ -61,7 +61,8 @@ def get_user_choice():
     Takes user input and directes user to their chossen selection
     """
     try:
-        user_choice = int(input(colored('Please choose an option from the list above:\n' ,  "light_magenta")))
+        user_choice = int(input(colored('Please choose an option from the'
+                                        'list above:\n',  "light_magenta")))
         if user_choice < 1 or user_choice > 4:
             raise ValueError
         if user_choice == 1:
@@ -69,7 +70,7 @@ def get_user_choice():
             owned_menu()
         elif user_choice == 2:
             print_top_100(trimmed_album_data)
-            owned_menu()  
+            owned_menu()
         elif user_choice == 3:
             print_owned(owned_album)
             owned_menu()
@@ -79,8 +80,8 @@ def get_user_choice():
             print("Invalid input, please choose again!")
             menu()
     except ValueError:
-            cprint("Invalid input: Please choose a number between 1 and 4" , "red")
-            menu()       
+        cprint("Invalid input: Please choose a number between 1 and 4", "red")
+        menu()
 
 
 def owned_menu():
@@ -93,7 +94,8 @@ def owned_menu():
     cprint("3 - Return to main menu", "light_yellow")
     cprint("4 - Exit", "light_yellow")
     try:
-        user_choice = int(input(colored('Please choose an option from the list above:\n', "light_magenta")))
+        user_choice = int(input(colored('Please choose an option from the list'
+                                        'above:\n', "light_magenta")))
         if user_choice < 1 or user_choice > 4:
             raise ValueError
         if user_choice == 1:
@@ -112,8 +114,8 @@ def owned_menu():
             print("Invalid input, please choose again!")
             owned_menu()
     except ValueError:
-            cprint("Invalid input: Please choose a number between 1 and 4" , "red")
-            owned_menu()
+        cprint("Invalid input: Please choose a number between 1 and 4", "red")
+        owned_menu()
 
 
 def search_menu():
@@ -125,7 +127,8 @@ def search_menu():
     cprint("3 - search by artist", "light_yellow")
     cprint("4 - search by genre", "light_yellow")
     try:
-        user_choice = int(input(colored("Please choose an option from the list above:\n", "light_magenta")))
+        user_choice = int(input(colored("Please choose an option from the list"
+                                        "above:\n", "light_magenta")))
         if user_choice < 1 or user_choice > 4:
             raise ValueError
         if user_choice == 1:
@@ -144,8 +147,8 @@ def search_menu():
             print("Invalid input, please choose again!")
             search_menu()
     except ValueError:
-            cprint("Invalid input: Please choose a number between 1 and 4" , "red")
-            search_menu()   
+        cprint("Invalid input: Please choose a number between 1 and 4", "red")
+        search_menu()
 
 
 def print_top_100(trimmed_album_data):
@@ -158,12 +161,14 @@ def print_top_100(trimmed_album_data):
           headers=["Ranking", "Year", "Album", "Artist"],
           tablefmt='grid', maxcolwidths=max_widths))
 
+
 def exit():
     """
     prints opening title and menu
     """
     opening_title()
     menu()
+
 
 def opening_title():
     """
