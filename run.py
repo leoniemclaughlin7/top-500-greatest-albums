@@ -38,7 +38,7 @@ def print_albums(trimmed_album_data):
     https://learnpython.com/blog/print-table-in-python/
     https://pypi.org/project/tabulate/
     """
-    max_widths = [None, None, 35, 25]
+    max_widths = [None, None, 35, 20]
     print(tabulate(trimmed_album_data,
           headers=["Ranking", "Year", "Album", "Artist"],
           tablefmt='plain', maxcolwidths=max_widths))
