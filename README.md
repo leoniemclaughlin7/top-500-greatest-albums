@@ -37,3 +37,24 @@ Testing of the functionality of this python terminal based application can be se
 | Input incorrect selection (integer) |An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4" |Chose 5 as a selection | pass
 |Input incorrect selection (string)|An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4"|Chose "cat" as a selection | pass
 |Input incorrect selection (empty)|An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4"|Enter empty input | pass
+
+### Search menu
+ 
+|Feature  | Expect  | Action | Result | 
+|--|--|--|--|
+| Option 1 | When option 1 is selected the user will be asked to input a search query according to the album title |Chose option 1 | pass
+| Input string that is not a valid query for option 1 | An error message will appear in red "No albums found, please try again!" |Input "poxa" | pass
+| Input empty value for option 1 | An error message will appear in red "Invalid input: Input cannot be empty" |Input empty value | pass
+|Option 2 | When option 2 is selected the user will be asked to "Please input a year from 1955 to 2011"|Chose option 2 | pass
+| Input value out of range for option 2 | An error message will appear in red "Invalid input: Please try again!" |Input 2012 | pass
+| Input string for option 2 | An error message will appear in red "Invalid input: Please try again!" |Input "cat" | pass
+| Input empty value for option 2 | An error message will appear in red "Invalid input: Please try again!" |Input empty value | pass
+|Option 3 | When option 1 is selected the user will be asked to input a search query according to the album artist |Chose option 3| pass
+| Input string that is not a valid query for option 3 | An error message will appear in red "No albums found, please try again!" |Input "poxa" | pass
+| Input empty value for option 3 | An error message will appear in red "Invalid input: Input cannot be empty" |Input empty value | pass
+|Option 4|When option 4 is selected the user is asked to input a search query relating to genre |Select option 4 | pass
+| Input string that is not a valid query for option 4 | An error message will appear in red "No albums found, please try again!" |Input "cat" | pass
+| Input empty value for option 4 | An error message will appear in red "Invalid input: Input cannot be empty" |Input empty value | pass
+| Input incorrect selection (integer) |An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4" |Chose 5 as a selection | pass
+|Input incorrect selection (string)|An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4"|Chose "cat" as a selection | pass
+|Input incorrect selection (empty)|An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4"|Enter empty input | pass
