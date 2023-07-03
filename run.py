@@ -61,7 +61,7 @@ def get_user_choice():
     Takes user input and directes user to their chossen selection
     """
     try:
-        user_choice = int(input(colored('Please choose an option from the'
+        user_choice = int(input(colored('Please choose an option from the '
                                         'list above:\n',  "light_magenta")))
         if user_choice < 1 or user_choice > 4:
             raise ValueError
@@ -94,8 +94,8 @@ def owned_menu():
     cprint("3 - Return to main menu", "light_yellow")
     cprint("4 - Exit", "light_yellow")
     try:
-        user_choice = int(input(colored('Please choose an option from the list'
-                                        'above:\n', "light_magenta")))
+        user_choice = int(input(colored('Please choose an option from the '
+                                        'list above:\n', "light_magenta")))
         if user_choice < 1 or user_choice > 4:
             raise ValueError
         if user_choice == 1:
@@ -127,8 +127,8 @@ def search_menu():
     cprint("3 - search by artist", "light_yellow")
     cprint("4 - search by genre", "light_yellow")
     try:
-        user_choice = int(input(colored("Please choose an option from the list"
-                                        "above:\n", "light_magenta")))
+        user_choice = int(input(colored("Please choose an option from the "
+                                        "list above:\n", "light_magenta")))
         if user_choice < 1 or user_choice > 4:
             raise ValueError
         if user_choice == 1:

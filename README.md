@@ -39,7 +39,7 @@ Testing of the functionality of this python terminal based application can be se
 |Input incorrect selection (empty)|An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4"|Enter empty input | pass
 
 ### Search menu
- 
+
 |Feature  | Expect  | Action | Result | 
 |--|--|--|--|
 | Option 1 | When option 1 is selected the user will be asked to input a search query according to the album title |Chose option 1 | pass
@@ -58,3 +58,14 @@ Testing of the functionality of this python terminal based application can be se
 | Input incorrect selection (integer) |An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4" |Chose 5 as a selection | pass
 |Input incorrect selection (string)|An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4"|Chose "cat" as a selection | pass
 |Input incorrect selection (empty)|An error message in red is displayed to the user "Invalid input: Please choose a number between 1 and 4"|Enter empty input | pass
+
+## Validator Testing
+
+###  CI Python Linter
+The Three python files run.py, search.py and owned.py where passed through the official [CI Python Linter](https://pep8ci.herokuapp.com/#)
+
+There where Two warnings relating to trailing white space on lines 179 and 182 in run.py, in which the ASCII art is defined, these whitespaces were not removed as it would change the look of the ASCII art. 
+
+There where no errors present in owned.py.
+
+There where no errors present in search.py.

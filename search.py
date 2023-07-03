@@ -8,7 +8,8 @@ def search_albums(all_albums, album_row):
     """
     while True:
         try:
-            search_word = input(colored("Enter a search query:\n", "light_magenta"))
+            search_word = input(colored("Enter a search "
+                                        "query:\n", "light_magenta"))
             if search_word == "":
                 raise ValueError
             found_albums = []
@@ -33,7 +34,8 @@ def search_year(all_albums):
     """
     while True:
         try:
-            year = int(input(colored("Please input a year from 1955 to 2011:\n", "light_magenta")))
+            year = int(input(colored("Please input a year from 1955 to "
+                                     "2011:\n", "light_magenta")))
             if year < 1955 or year > 2011:
                 raise ValueError
             found_albums = []

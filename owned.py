@@ -12,11 +12,12 @@ def get_owned(trimmed_album_data):
     """
     while True:
         try:
-            album_ranking = int(input(colored("Please input the ranking of the album you would "
-                          "like to add:\n", "light_magenta")))
+            album_ranking = int(input(colored("Please input the ranking of "
+                                              "the album you would like to "
+                                              "add:\n", "light_magenta")))
             if album_ranking < 1 or album_ranking > 500:
                 raise ValueError
-            selected_album = trimmed_album_data[album_ranking -1]
+            selected_album = trimmed_album_data[album_ranking - 1]
             if selected_album not in owned_album:
                 owned_album.append(selected_album)
                 break
@@ -24,7 +25,8 @@ def get_owned(trimmed_album_data):
                 cprint("Album already in list!", "red")
                 break
         except ValueError:
-            cprint("Invalid input: Please enter a number between 1 and 500" , "red")
+            cprint("Invalid input: Please enter a number "
+                   "between 1 and 500", "red")
 
 
 def print_owned(owned_album):
@@ -33,7 +35,7 @@ def print_owned(owned_album):
     https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty
     """
     if not owned_album:
-        cprint("You have not added anything to this list yet!" , "red")  
+        cprint("You have not added anything to this list yet!", "red")
     else:
         max_widths = [None, None, 35, 17]
         print(tabulate(owned_album,
@@ -49,10 +51,11 @@ def remove_owned():
     """
     try:
         if not owned_album:
-            pass 
+            pass
         else:
-            album_ranking = input(colored("Please input the ranking of the album you would "
-                          "like to remove:\n", "light_magenta"))
+            album_ranking = input(colored("Please input the ranking of the "
+                                          "album you would like to "
+                                          "remove:\n", "light_magenta"))
             if int(album_ranking) < 1 or int(album_ranking) > 500:
                 raise ValueError
             removed_albums = []
@@ -63,8 +66,10 @@ def remove_owned():
                         if lst in owned_album:
                             owned_album.remove(lst)
             if removed_albums:
-                cprint("Album has been removed from owned list" , "light_yellow")       
+                cprint("Album has been removed from owned list",
+                       "light_yellow")
             else:
-                cprint("Album not in owned list!" , "red")
+                cprint("Album not in owned list!", "red")
     except ValueError:
-        cprint("Invalid input: Please enter a number between 1 and 500" , "red") 
+        cprint("Invalid input: Please enter a number between 1 and 500",
+               "red")
