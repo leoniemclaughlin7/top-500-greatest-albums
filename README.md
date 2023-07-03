@@ -66,6 +66,12 @@ The Three python files run.py, search.py and owned.py where passed through the o
 
 There where Two warnings relating to trailing white space on lines 179 and 182 in run.py, in which the ASCII art is defined, these whitespaces were not removed as it would change the look of the ASCII art. 
 
+<img src="assets/readme-images/run.py.png">
+
 There where no errors present in owned.py.
 
+<img src="assets/readme-images/owned.py.png">
+
 There where no errors present in search.py.
+
+<img src="assets/readme-images/search.py.png">
