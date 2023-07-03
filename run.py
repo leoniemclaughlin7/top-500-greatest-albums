@@ -112,7 +112,7 @@ def owned_menu():
             print("Invalid input, please choose again!")
             owned_menu()
     except ValueError:
-            cprint("Invalid input: Please choose a number between 1 and 3" , "red")
+            cprint("Invalid input: Please choose a number between 1 and 4" , "red")
             owned_menu()
 
 
