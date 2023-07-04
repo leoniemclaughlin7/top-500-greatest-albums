@@ -64,7 +64,7 @@ Testing of the functionality of this python terminal based application can be se
 ###  CI Python Linter
 The Three python files run.py, search.py and owned.py where passed through the official [CI Python Linter](https://pep8ci.herokuapp.com/#)
 
-There where Two warnings relating to trailing white space on lines 179 and 182 in run.py, in which the ASCII art is defined, these whitespaces were not removed as it would change the look of the ASCII art. 
+There where Two warnings relating to trailing whitespace on lines 179 and 182 in run.py, in which the ASCII art is defined, these whitespaces were not removed as it would change the look of the ASCII art. 
 
 <img src="assets/readme-images/run.py.png">
 
@@ -75,3 +75,20 @@ There where no errors present in owned.py.
 There where no errors present in search.py.
 
 <img src="assets/readme-images/search.py.png">
+
+# Deployment 
+
+1. Create a list of requirements that the project needs to run.  Heroku must install the dependencies used in the project. To do this type the command ```pip3 freeze > requirements.txt``` in the terminal to update the requirements.txt file.
+2. Navigate to heroku.com and either log in or sign up using the form provided. 
+3. Click create app from your Heroku dashboard.
+4. Give the app a unique name.
+5. Navigate to the settings tab.
+6. Add a Config Var with a key of ```PORT``` and value of ```8000```.
+7. Add Buildpacks first python and then node.js.
+8. Navigate to the deploy tab.
+9. Select GitHub as the deployment method.
+10. Search for GitHub repository, click connect to link up the GitHub repository to our Heroku app.
+11. You can choose to either automatic deploy or manually deploy the app.
+12. Automatic deploy will build the app each time it is pushed to GitHub. To enable this choose the branch you would like to deploy and click ```Enable Automatic Deploys```. 
+13. To manually deploy the app click ```Deploy Branch```.
+14. To view the deployed app click ```Open app``` at the top of the page.
