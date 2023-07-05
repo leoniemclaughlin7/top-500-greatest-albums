@@ -1,3 +1,9 @@
+# Top Albums 
+
+A live version of the project can be accessed here: [Top Albums](https://top-500-albums-lmclaughlin-aa0faa062497.herokuapp.com/)
+
+<img src="assets/readme-images/opening-screen.png">
+
 # Flowchart
 
 <img src="assets/readme-images/flowchart-top-albums.png">
