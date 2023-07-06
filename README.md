@@ -28,6 +28,42 @@ As a User of this application:
 
 <img src="assets/readme-images/flowchart-top-albums.png">
 
+# Features
+
+The top albums python terminal application contains three main menus. Each menu and its functionality will be described in detail below. The three main menus in this design are:
+
+* Main menu.  
+* Search menu. 
+* Owned menu.
+
+## Existing Features
+
+### Menu 
+
+* The main menu is the point to run the application.
+* It contains options to show all albums, show the top 100 albums, view the owned list and search albums, in which the user is directed to the search menu. 
+* The user can navigate this menu by choosing an option from 1 - 4.
+
+<img src="assets/readme-images/main-menu.png">
+
+* If the user chooses option 1 from this menu they will be directed to a list of all albums, to include their ranking, year, album and artist. 
+* The owned menu will be displayed after the list of albums.
+
+<img src="assets/readme-images/all-albums.png">
+
+* If the user selection is option 2 the top 100 albums depending on ranking will be displayed. 
+* The owned menu will be displayed after the list of albums. 
+
+<img src="assets/readme-images/top-100.png">
+
+* Option 3 will bring the user to a list of their owned albums.
+* If the user has not entered any albums into this list a message displayed in red will be shown to the user to inform them of this. 
+* Either after the list of owned albums or the message is displayed to the user the owned menu will be shown to the user.
+
+<img src="assets/readme-images/owned-list.png">
+
+* If the user chooses option 4 they will be directed to the search menu.
+
 # Testing
 
 Testing of the functionality of this python terminal based application can be seen in the following tables. All testing was carried out in the deployed version of this application. 
