@@ -86,6 +86,25 @@ The top albums python terminal application contains three main menus. Each menu 
 
 <img src="assets/readme-images/search-genre.png">
 
+### Owned menu 
+
+* The owned menu is shown after any album list is generated either by choosing the option or searching.
+* In the owned menu users can add an album to the owned list, remove an album from the owned list, return to the main menu or exit the programme which restarts the application. 
+
+<img src="assets/readme-images/owned-menu.png">
+
+* If the user selects option 1 they are asked to input the ranking of the album they would like to add to the owned list.
+* The user must input a number between 1 and 500 and the same album cannot be added twice. 
+
+<img src="assets/readme-images/owned-add.png">
+
+* Option 2 will allow a user to remove an album from the owned list.
+* The user must input a number between 1 and 500 and the album ust be present in the owned list. 
+
+<img src="assets/readme-images/owned-remove.png">
+
+* Option 3 and 4 return to the main menu and exit or restart the application respectively. 
+
 
 # Testing
 

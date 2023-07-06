@@ -48,7 +48,6 @@ def menu():
     """
     Prints user menu to screen
     """
-    cprint("Please choose a selection from the menu below:", "light_magenta")
     cprint("1 - Show all albums", "light_yellow")
     cprint("2 - Show top 100 albums", "light_yellow")
     cprint("3 - Show owned list", "light_yellow")
