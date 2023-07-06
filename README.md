@@ -1,8 +1,28 @@
 # Top Albums 
 
+Top Albums is a python based terminal application. This application allows users to query a csv file containing The Rolling Stones top 500 albums. Users can obtain a list of all albums, to include their ranking, year, album and artist. Users can query the top 100 albums. They can also add and remove an album to a list of their owned albums. Finally users can search the albums by title, year, artist and genre. This application was designed for any music enthusiast to enjoy. 
+
 A live version of the project can be accessed here: [Top Albums](https://top-500-albums-lmclaughlin-aa0faa062497.herokuapp.com/)
 
 <img src="assets/readme-images/opening-screen.png">
+
+# User Experience Design
+
+## User Demographic
+
+This application is intended for:
+
+* Users that have a keen interest in music.
+* Users that would like to track which albums they own.
+* Users that wish to query they top 500 albums according to Rolling Stones.  
+
+## User Stories
+
+As a User of this application:
+
+* I want to view the rankings of the top albums.
+* I want to track which albums I own from the list.
+* I want to be able to search the albums.
 
 # Flowchart
 
