@@ -64,6 +64,29 @@ The top albums python terminal application contains three main menus. Each menu 
 
 * If the user chooses option 4 they will be directed to the search menu.
 
+### Search menu 
+
+* The search menu contains options for the user to search the albums by title, year, artist and genre.
+
+<img src="assets/readme-images/search-menu.png">
+
+* If the user chooses option 1, they will be asked to enter a search query relating to the album title. 
+
+<img src="assets/readme-images/search-title.png">
+
+* Option 2 allows the user to search by year. The user must enter a year between 1955 and 2011. 
+
+<img src="assets/readme-images/search-year.png">
+
+* If the user selects option 3 They will be directed to enter a search query relating to artist. 
+
+<img src="assets/readme-images/search-artist.png">
+
+* Option 4 directs the user to enter a search query to search by genre.
+
+<img src="assets/readme-images/search-genre.png">
+
+
 # Testing
 
 Testing of the functionality of this python terminal based application can be seen in the following tables. All testing was carried out in the deployed version of this application. 
