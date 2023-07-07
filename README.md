@@ -30,6 +30,12 @@ As a User of this application:
 
 [Back to top](#top-albums)
 
+# Imports Used 
+
+*  [Tabulate](https://pypi.org/project/tabulate/) was used to format all the tables in this application. Both grid and plain tables where used. 
+* [Termcolor](https://pypi.org/project/termcolor/) was used to add colour into this application. 
+* [CSV](https://pypi.org/project/csv342/) was used to aid with reading the CSV file. 
+
 # Technologies used 
 
 * <b>Python</b> - This application was developed using Python.  
