@@ -6,6 +6,33 @@ A live version of the project can be accessed here: [Top Albums](https://top-500
 
 <img src="assets/readme-images/opening-screen.png">
 
+# Table Of Contents
+
+* [User Experience Design](#user-experience-design)
+  * [User Demographic](#user-demographic)
+  * [User Stories](#user-stories)
+* [Flowchart](#flowchart)
+* [Imports used](#imports-used)
+* [Technologies used ](#technologies-used)
+* [Features](#features)
+  * [Existing Features](#existing-features)
+    * [Menu](#menu)
+    * [Search menu](#search-menu)
+    * [Owned menu](#owned-menu)
+  * [Features Left to Implement](#features-left-to-implement)
+* [Testing](#testing)
+  * [Menu](#menu-1)
+  * [Owned menu](#owned-menu-1)
+  * [Search menu](#search-menu-1)
+  * [Validator Testing](#validator-testing)
+    * [CI Python Linter](#ci-python-linter)
+* [known Bugs](#known-bugs)
+* [Deployment](#deployment)
+* [Credits](#credits)
+  * [Content](#content)
+  * [Code](#code)
+* [Acknowledgements](#acknowledgements)
+
 # User Experience Design
 
 ## User Demographic
@@ -42,7 +69,8 @@ As a User of this application:
 * <b>Heroku</b> - Used for deployment.
 * <b>GitHub</b> - The code for this application is stored on GitHub.
 * <b>Git</b> - Used for version control.  
-* <b>Codeanywhere</b> - IDE used for creating the application. 
+* <b>Codeanywhere</b> - IDE used for creating the application.
+* <b>Lucid chart</b> - Used to create the flowchart.  
 
 # Features
 
