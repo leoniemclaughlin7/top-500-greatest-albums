@@ -105,6 +105,13 @@ The top albums python terminal application contains three main menus. Each menu 
 
 * Option 3 and 4 return to the main menu and exit or restart the application respectively. 
 
+## Features Left to Implement
+
+* A system could be implemented that allows users to add to the list of albums. 
+* Exporting the owned list to a database could be implemented.
+* Allowing the user to log in to the application, so as the application could run many different user profiles would be a future adaptation of this application. 
+
+[Back to top](#top-albums)
 
 # Testing
 
