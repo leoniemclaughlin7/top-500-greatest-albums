@@ -180,6 +180,20 @@ There where no errors present in search.py.
 
 <img src="assets/readme-images/search.py.png">
 
+# known Bugs
+
+All known bugs have been fixed, below is a list of bugs encountered and how they have been fixed.
+
+|Bug  | Status | Solution  | 
+|--|--|--|
+|When all albums was chosen to be displayed the full table did not fit in the terminal horizontal scroll| fixed| Changed the table type to plain from grid to allow all albums to be viewed. Grid was kept as the default for all other tables as it is more ascetically pleasing. 
+|When adding to the owned list, one album higher was appending. For example if choosing album 45 album 46 would append to the list| fixed| Resolved by querying the album ranking index in the list - 1.
+|The table using tabulate was too large for the screen and therefore distorted| fixed| Resolved by using ```maxcolwidths``` a built in function with tabulate that lets you specify the width of the table columns.
+|Circular import error when trying to import run.py into owned.py and search.py| fixed |Resolved by removing the import for run.py and calling the desired functions within run.py instead|
+|When reading in the CSV file, it would break when certain characters where reached in the file | fixed |Resolved by setting the encoding for the CSV file to latin1|
+|In order to exit the application from the owned menu, I imported sys and tried to use ```sys.exit()```, however this would not work when deployed to Heroku| fixed |I decided that when the user wants to exit the application they would be redirected to the opening screen and the main menu.|
+|When deploying to Heroku, imports such as tabulate and term colour where not recognised| fixed |I needed to update my requirements.txt file to include these imports.|
+
 # Deployment 
 
 1. Create a list of requirements that the project needs to run.  Heroku must install the dependencies used in the project. To do this type the command ```pip3 freeze > requirements.txt``` in the terminal to update the requirements.txt file.

@@ -30,7 +30,7 @@ def search_albums(all_albums, album_row):
 
 def search_year(all_albums):
     """
-    searched albums by year
+    search albums by year
     """
     while True:
         try:

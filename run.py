@@ -34,8 +34,6 @@ def trimmed_albums(album_data):
 def print_albums(trimmed_album_data):
     """
     Prints all albums to screen minus subgenre and genre
-    https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/
-    https://learnpython.com/blog/print-table-in-python/
     https://pypi.org/project/tabulate/
     """
     max_widths = [None, None, 35, 20]

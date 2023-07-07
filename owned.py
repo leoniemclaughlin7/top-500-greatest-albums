@@ -8,7 +8,6 @@ def get_owned(trimmed_album_data):
     """
     gets album from list based on user input and returns album
     and artist in string format, then appends to new list owned_albums
-    https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
     """
     while True:
         try:
