@@ -28,6 +28,16 @@ As a User of this application:
 
 <img src="assets/readme-images/flowchart-top-albums.png">
 
+[Back to top](#top-albums)
+
+# Technologies used 
+
+* <b>Python</b> - This application was developed using Python.  
+* <b>Heroku</b> - Used for deployment.
+* <b>GitHub</b> - The code for this application is stored on GitHub.
+* <b>Git</b> - Used for version control.  
+* <b>Codeanywhere</b> - IDE used for creating the application. 
+
 # Features
 
 The top albums python terminal application contains three main menus. Each menu and its functionality will be described in detail below. The three main menus in this design are:
@@ -186,6 +196,8 @@ There where no errors present in owned.py.
 There where no errors present in search.py.
 
 <img src="assets/readme-images/search.py.png">
+
+[Back to top](#top-albums)
 
 # known Bugs
 
