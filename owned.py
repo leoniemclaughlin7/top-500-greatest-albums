@@ -47,6 +47,7 @@ def remove_owned():
     Removes album for list of owned albums
     https://datagy.io/python-list-pop-remove-del-clear/
     https://www.w3schools.com/python/ref_keyword_pass.asp
+    https://www.pythonforbeginners.com/basics/list-of-lists-in-python
     """
     try:
         if not owned_album:

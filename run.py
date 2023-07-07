@@ -84,7 +84,6 @@ def get_user_choice():
 def owned_menu():
     """
     displays a menu to user to add album to owned list
-    https://stackoverflow.com/questions/73663/how-do-i-terminate-a-script
     """
     cprint("1 - Add album to owned list", "light_yellow")
     cprint("2 - Remove album from owned list", "light_yellow")

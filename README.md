@@ -229,3 +229,28 @@ All known bugs have been fixed, below is a list of bugs encountered and how they
 12. Automatic deploy will build the app each time it is pushed to GitHub. To enable this choose the branch you would like to deploy and click ```Enable Automatic Deploys```. 
 13. To manually deploy the app click ```Deploy Branch```.
 14. To view the deployed app click ```Open app``` at the top of the page.
+
+A live version of the project can be accessed here: [Top Albums](https://top-500-albums-lmclaughlin-aa0faa062497.herokuapp.com/)
+
+# Credits
+
+### Content
+
+* [CSV file](https://github.com/Currie32/500-Greatest-Albums/blob/master/albumlist.csv) 
+
+### Code
+
+* [Assistance with reading in a CSV file](https://realpython.com/python-csv/)
+* [Tabulate](https://pypi.org/project/tabulate/)
+* [ASCII art](https://texteditor.com/ascii-art/)
+* [Checking if a list is empty](https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty)
+* [Removing an item from a list](https://datagy.io/python-list-pop-remove-del-clear/)
+* [Use of PASS keyword](https://www.w3schools.com/python/ref_keyword_pass.asp)
+* [Removing item from owned list](https://www.pythonforbeginners.com/basics/list-of-lists-in-python)
+* [Termcolor](https://pypi.org/project/termcolor/)
+
+# Acknowledgements
+
+I would like to thank my mentor Lauren-Nicole Popich, the Code Institute team and the Slack community.  
+
+[Back to top](#top-albums)
