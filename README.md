@@ -143,7 +143,7 @@ The top albums python terminal application contains three main menus. Each menu 
 <img src="assets/readme-images/owned-add.png">
 
 * Option 2 will allow a user to remove an album from the owned list.
-* The user must input a number between 1 and 500 and the album ust be present in the owned list. 
+* The user must input a number between 1 and 500 and the album must be present in the owned list. 
 
 <img src="assets/readme-images/owned-remove.png">
 
