@@ -83,7 +83,7 @@ def get_user_choice():
 
 def owned_menu():
     """
-    displays a menu to user to add album to owned list
+    displays a menu to user to add and remove album from owned list
     """
     cprint("1 - Add album to owned list", "light_yellow")
     cprint("2 - Remove album from owned list", "light_yellow")

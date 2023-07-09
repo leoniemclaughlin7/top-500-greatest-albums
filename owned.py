@@ -6,8 +6,8 @@ owned_album = []
 
 def get_owned(trimmed_album_data):
     """
-    gets album from list based on user input and returns album
-    and artist in string format, then appends to new list owned_albums
+    gets album from list based on user input,
+    then appends to new list owned_albums
     """
     while True:
         try:

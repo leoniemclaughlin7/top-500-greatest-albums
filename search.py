@@ -4,7 +4,7 @@ from termcolor import colored, cprint
 
 def search_albums(all_albums, album_row):
     """
-    searches all album names by inputted word from user
+    searches all albums by inputted word from user
     """
     while True:
         try:
